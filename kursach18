@@ -1,0 +1,28 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+    const int n = 30;
+    int indexMax, m;
+    double array[n], max, buff;
+    cout << "m = ";
+    cin >> m;
+    for (int i = 0; i < n; i++)
+    {
+        cout << "a" << i << " = ";
+        cin >> array[i];
+        if (array[i] > max)
+        {
+            max = array[i];
+            indexMax = i;
+        }
+    }
+    buff = array[m];
+    array[m] = max;
+    array[indexMax] = buff;
+    for (int i = 0; i < n; i++)
+    {
+        cout << "a" << i << " = " << array[i] << " ";
+    }
+}
