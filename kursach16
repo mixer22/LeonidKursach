@@ -1,0 +1,42 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+    int n,m;
+    cout << "n = ";
+    cin >> n;
+    cout << "m = ";
+    cin >> m;
+    double arrayX[n], arrayY[m];
+    double Xmax, Xmin, Ymax, Ymin, Z;
+    for (int i = 0; i < n; i++)
+    {
+        cout << "x" << i << " = ";
+        cin >> arrayX[i];
+        if (arrayX[i] > Xmax)
+        {
+            Xmax = arrayX[i];
+        }
+        if (arrayX[i] < Xmin)
+        {
+            Xmin = arrayX[i];
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout << "y" << i << " = ";
+        cin >> arrayY[i];
+        if (arrayY[i] > Ymax)
+        {
+            Ymax = arrayY[i];
+        }
+        if (arrayY[i] < Ymin)
+        {
+            Ymin = arrayY[i];
+        }
+    }
+    Z = ((exp(Xmax) - exp(Ymax))/(sqrt(abs(Xmax*Xmin))))*(sqrt(abs(Xmax*Xmin)));
+    cout << "Z = " << Z;
+    return 0;
+}
