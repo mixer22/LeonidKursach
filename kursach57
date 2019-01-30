@@ -1,0 +1,63 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+    int n,m; //переменные, дающиеся на вход
+    double max; //переменная для хранения значения макс.члена
+    int indexMax1; //переменная для хранения индекса макс.члена последовательности X
+    int indexMax2; //переменная для хранения индекса макс.члена последовательности Y
+    cout << "n = ";
+    cin >> n; //считывание n
+    cout << "m = ";
+    cin >> m; //считывание m
+
+    double arrayX[n], arrayY[m]; //объявление последовательностей X и Y
+    double arrayX2[n-1], arrayY2[m-1]; //объявление новых последовательностей
+
+    for (int i = 0; i < n; i++) //заполнение последовательности X
+    {
+        cout << "x" << i << " = ";
+        cin >> arrayX[i];
+        if (arrayX[i] > max) //поиск максимального члена последовательности X
+        {
+            max = arrayX[i];
+            indexMax1 = i;
+        }
+    }
+    for (int i = 0; i < n-1; i++) //заполнение новой последовательности X
+    {
+        if (i == indexMax1)
+        {
+            arrayX2[i] = arrayX[i+1];
+        }
+        arrayX2[i] = arrayX[i];
+    }
+    for (int i = 0; i < m; i++) //заполнение последовательности Y
+    {
+        cout << "y" << i << " = ";
+        cin >> arrayY[i];
+        if (arrayY[i] > max) //поиск максимального члена последовательности Y
+        {
+            max = arrayY[i];
+            indexMax2 = i;
+        }
+    }
+    max = 0; //обнуляем переменную max
+    for (int i = 0; i < m-1; i++) //заполнение новой последовательности Y
+    {
+        if (i == indexMax2)
+        {
+            arrayY2[i] = arrayY[i+1];
+        }
+        arrayY2[i] = arrayY[i];
+    }
+    for (int i = 0; i < n-1; i++) //вывод на экран измененной последовательности X
+    {
+        cout << "a" << i << " = " << arrayX2[i] << " ";
+    }
+    for (int i = 0; i < m-1; i++) //вывод на экран измененной последовательности Y
+    {
+        cout << "a" << i << " = " << arrayY2[i] << " ";
+    }
+}
