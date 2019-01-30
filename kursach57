@@ -3,29 +3,29 @@
 using namespace std;
 
 int main(){
-    int n,m; //переменные, дающиеся на вход
-    double max; //переменная для хранения значения макс.члена
-    int indexMax1; //переменная для хранения индекса макс.члена последовательности X
-    int indexMax2; //переменная для хранения индекса макс.члена последовательности Y
+    int n,m;
+    double max;
+    int indexMax1;
+    int indexMax2;
     cout << "n = ";
-    cin >> n; //считывание n
+    cin >> n; 
     cout << "m = ";
-    cin >> m; //считывание m
+    cin >> m;
 
-    double arrayX[n], arrayY[m]; //объявление последовательностей X и Y
-    double arrayX2[n-1], arrayY2[m-1]; //объявление новых последовательностей
+    double arrayX[n], arrayY[m];
+    double arrayX2[n-1], arrayY2[m-1];
 
-    for (int i = 0; i < n; i++) //заполнение последовательности X
+    for (int i = 0; i < n; i++)
     {
         cout << "x" << i << " = ";
         cin >> arrayX[i];
-        if (arrayX[i] > max) //поиск максимального члена последовательности X
+        if (arrayX[i] > max)
         {
             max = arrayX[i];
             indexMax1 = i;
         }
     }
-    for (int i = 0; i < n-1; i++) //заполнение новой последовательности X
+    for (int i = 0; i < n-1; i++)
     {
         if (i == indexMax1)
         {
@@ -33,18 +33,18 @@ int main(){
         }
         arrayX2[i] = arrayX[i];
     }
-    for (int i = 0; i < m; i++) //заполнение последовательности Y
+    for (int i = 0; i < m; i++)
     {
         cout << "y" << i << " = ";
         cin >> arrayY[i];
-        if (arrayY[i] > max) //поиск максимального члена последовательности Y
+        if (arrayY[i] > max)
         {
             max = arrayY[i];
             indexMax2 = i;
         }
     }
-    max = 0; //обнуляем переменную max
-    for (int i = 0; i < m-1; i++) //заполнение новой последовательности Y
+    max = 0;
+    for (int i = 0; i < m-1; i++)
     {
         if (i == indexMax2)
         {
@@ -52,11 +52,11 @@ int main(){
         }
         arrayY2[i] = arrayY[i];
     }
-    for (int i = 0; i < n-1; i++) //вывод на экран измененной последовательности X
+    for (int i = 0; i < n-1; i++)
     {
         cout << "a" << i << " = " << arrayX2[i] << " ";
     }
-    for (int i = 0; i < m-1; i++) //вывод на экран измененной последовательности Y
+    for (int i = 0; i < m-1; i++)
     {
         cout << "a" << i << " = " << arrayY2[i] << " ";
     }
