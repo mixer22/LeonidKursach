@@ -5,31 +5,31 @@ using namespace std;
 int main(){
     int n, count = 0;
     cout << "n = ";
-    cin >> n;
-    double array[n], array1[n];
-    for (int i = 0; i < n; i++)
+    cin >> n; //считываем n
+    double array[n], array1[n]; // объявляем массивы
+    for (int i = 0; i < n; i++) // вводим первый массив
     {
         cout << "a" << i << " = ";
         cin >> array[i];
 
     }
-    for (int i = n-1 ; i >= 0; i--)
+    for (int i = n-1 ; i >= 0; i--) // обрабатываем массив с конца
     {
-        if (array[i] < 0)
+        if (array[i] < 0) // записываем отрицательные элементы в обратном порядке
         {
             array1[count] = array[i];
             count++;
         }
     }
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) // обрабатываем массив с начала
     {
-        if (array[i] >= 0)
+        if (array[i] >= 0) // дописываем остальные неотрицательные элементы
         {
             array1[count] = array[i];
             count++;
         }
     }
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) // выводим второй массив
     {
         cout << "a" << i << " = " << array1[i] << " ";
     }
