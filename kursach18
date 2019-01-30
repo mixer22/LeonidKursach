@@ -3,25 +3,25 @@
 using namespace std;
 
 int main(){
-    const int n = 30;
-    int indexMax, m;
-    double array[n], max, buff;
+    const int n = 30; // кол-во элементов последовательности
+    int indexMax, m; // индекс макс.элемента
+    double array[n], max, buff; // массив, макс.значение, буффер
     cout << "m = ";
-    cin >> m;
-    for (int i = 0; i < n; i++)
+    cin >> m; // считываем m
+    for (int i = 0; i < n; i++) // вводим массив
     {
         cout << "a" << i << " = ";
         cin >> array[i];
-        if (array[i] > max)
+        if (array[i] > max) // ищеем максимальный элемент и его индекс
         {
             max = array[i];
             indexMax = i;
         }
     }
     buff = array[m];
-    array[m] = max;
+    array[m] = max; // меняем местами максимальный и нужный элементы массива
     array[indexMax] = buff;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) // выводим массив
     {
         cout << "a" << i << " = " << array[i] << " ";
     }
