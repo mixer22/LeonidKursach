@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    int n,m,n1,m1;
+    int n,m;
     double max;
     int indexMax1;
     int indexMax2;
@@ -11,12 +11,14 @@ int main(){
     cin >> n;
     cout << "m = ";
     cin >> m;
-    n1 = n - 1;
-    m1 = m - 1;
-    double arrayX[n], arrayY[m];
-    double arrayX2[n1], arrayY2[m1];
+    const int n1 = n;
+    const int m1 = m;
+    const int n2 = n1 -1;
+    const int m2 = m1 - 1;
+    double arrayX[n1], arrayY[m1];
+    double arrayX2[n2], arrayY2[m2];
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n1; i++)
     {
         cout << "x" << i << " = ";
         cin >> arrayX[i];
@@ -26,7 +28,7 @@ int main(){
             indexMax1 = i;
         }
     }
-    for (int i = 0; i < n1; i++)
+    for (int i = 0; i < n2; i++)
     {
         if (i == indexMax1)
         {
@@ -34,7 +36,7 @@ int main(){
         }
         arrayX2[i] = arrayX[i];
     }
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < m1; i++)
     {
         cout << "y" << i << " = ";
         cin >> arrayY[i];
@@ -45,7 +47,7 @@ int main(){
         }
     }
     max = 0;
-    for (int i = 0; i < m1; i++)
+    for (int i = 0; i < m2; i++)
     {
         if (i == indexMax2)
         {
@@ -53,11 +55,11 @@ int main(){
         }
         arrayY2[i] = arrayY[i];
     }
-    for (int i = 0; i < n1; i++)
+    for (int i = 0; i < n2; i++)
     {
         cout << "a" << i << " = " << arrayX2[i] << " ";
     }
-    for (int i = 0; i < m1; i++)
+    for (int i = 0; i < m2; i++)
     {
         cout << "a" << i << " = " << arrayY2[i] << " ";
     }
