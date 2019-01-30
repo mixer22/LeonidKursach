@@ -3,17 +3,18 @@
 using namespace std;
 
 int main(){
-    int n,m;
+    int n,m,n1,m1;
     double max;
     int indexMax1;
     int indexMax2;
     cout << "n = ";
-    cin >> n; 
+    cin >> n;
     cout << "m = ";
     cin >> m;
-
+    n1 = n - 1;
+    m1 = m - 1;
     double arrayX[n], arrayY[m];
-    double arrayX2[n-1], arrayY2[m-1];
+    double arrayX2[n1], arrayY2[m1];
 
     for (int i = 0; i < n; i++)
     {
@@ -25,7 +26,7 @@ int main(){
             indexMax1 = i;
         }
     }
-    for (int i = 0; i < n-1; i++)
+    for (int i = 0; i < n1; i++)
     {
         if (i == indexMax1)
         {
@@ -44,7 +45,7 @@ int main(){
         }
     }
     max = 0;
-    for (int i = 0; i < m-1; i++)
+    for (int i = 0; i < m1; i++)
     {
         if (i == indexMax2)
         {
@@ -52,11 +53,11 @@ int main(){
         }
         arrayY2[i] = arrayY[i];
     }
-    for (int i = 0; i < n-1; i++)
+    for (int i = 0; i < n1; i++)
     {
         cout << "a" << i << " = " << arrayX2[i] << " ";
     }
-    for (int i = 0; i < m-1; i++)
+    for (int i = 0; i < m1; i++)
     {
         cout << "a" << i << " = " << arrayY2[i] << " ";
     }
