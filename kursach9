@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+void RandomAdd(double *ptr[], int nRow, int line){ // функция заполнения матрицы случайными числами и вывода ее на экран
+    for (int i = 0; i < nRow; i++)
+    {
+        for (int j = 0; j < line; j++)
+        {
+            ptr[i][j] = rand() % 201 - 100; // генерируем числа в числовом диапазоне от -100 до 100
+            cout << "[" << ptr[i][j] << "]" << " "; // выводим матрицу для наглядности
+        }
+        cout << endl;
+    }
+}
+void MinElem(double *ptr[], int nRow, int line){ // функция нахождения минимального положительного элемента матрицы
+    for (int i = 0; i < nRow; i++) // ищем мин.пол. элемент по строкам
+    {
+        double min;
+        for (int v = 0; v < line; v++)
+        {
+            if (ptr[i][v] > 0)
+            {
+                min = ptr[i][v];
+            }
+        }
+        for (int j = 0; j < line; j++) // ищем минимальный положительный элемент по столбцам
+        {
+            if ((ptr[i][j] < min)&&(ptr[i][j] > 0))
+            {
+                min = ptr[i][j];
+            }
+        }
+        cout << "min element " << i << " line = " << min << endl;
+    }
+}
+
+int main() {
+    int n,m;
+    double min;
+    cout << "n = ";
+    cin >> n;
+    cout << "m = ";
+    cin >> m;
+    double A[n][m]; // создаем матрицу А
+    double *pA[n]; // создаем массив указателей А
+    for (int i = 0; i < n; i++) // заполняем массив указателей
+    {
+        pA[i] = A[i];
+    }
+    cout << "Матрица А" << endl;
+    RandomAdd(pA, n, m); // вызываем функцию создания
+    cout << endl;
+    MinElem(pA, n, m); // вызываем функцию поиска мин.элемента
+    return 0;
+}
