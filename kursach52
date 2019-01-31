@@ -1,0 +1,80 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+    const int n = 10, m = 15; // размеры массивов
+    double max1 = max1,max2;
+    int indexMax1;
+    int indexMax2;
+    double arrayA[n]; // массив А
+    double arrayB[m]; // массив В
+
+    for (int i = 0; i < n; i++) // вводим массив А
+    {
+        cout << "a" << i << " = ";
+        cin >> arrayA[i];
+    }
+    max1 = arrayA[0];
+    for (int i = 0; i < n; i++)
+    {
+        if (arrayA[0] > 0) // находим его минимальный или максимальный член
+        {
+            if (arrayA[i] < max1)
+            {
+                max1 = arrayA[i];
+                indexMax1 = i;
+            }
+        }
+        else
+        {
+            if (arrayA[i] > max1)
+            {
+                max1 = arrayA[i];
+                indexMax1 = i;
+            }
+        }
+    }
+    for (int i = 0; i < m; i++) // вводим массив В
+    {
+        cout << "b" << i << " = ";
+        cin >> arrayB[i];
+    }
+    max2 = arrayB[0];
+    for (int i = 0; i < m; i++)
+    {
+        if (arrayB[0] > 0) // находим его минимальный или максимальный член
+        {
+            if (arrayB[i] < max2)
+            {
+                max2 = arrayB[i];
+                indexMax2 = i;
+            }
+        }
+        else
+        {
+            if (arrayB[i] > max2)
+            {
+                max2 = arrayB[i];
+                indexMax2 = i;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++) // умножаем элементы массива А на квадрат числа
+    {
+        arrayA[i] = arrayA[i] * pow(max1,2);
+    }
+    for (int i = 0; i < m; i++) // умножаем элементы массива В на квадрат числа
+    {
+        arrayB[i] = arrayB[i] * pow(max2,2);
+    }
+    for (int i = 0; i < n; i++) // выводим массив А
+    {
+        cout << "a" << i << " = " << arrayA[i] << " ";
+    }
+    cout << endl;
+    for (int i = 0; i < m; i++) // выводим массив В
+    {
+        cout << "b" << i << " = " << arrayB[i] << " ";
+    }
+}
