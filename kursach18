@@ -18,8 +18,8 @@ int main(){
             indexMax = i;
         }
     }
-    buff = array[m];
-    array[m] = max; // меняем местами максимальный и нужный элементы массива
+    buff = array[m-1];
+    array[m-1] = max; // меняем местами максимальный и нужный элементы массива
     array[indexMax] = buff;
     for (int i = 0; i < n; i++) // выводим массив
     {
